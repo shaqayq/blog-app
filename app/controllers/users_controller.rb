@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    def index
-    #display all users list
+    def index;
+       
     end
 
     def show
