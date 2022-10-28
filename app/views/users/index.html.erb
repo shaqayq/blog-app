@@ -1,1 +1,12 @@
-<h1>user data will display</h1>
+<h1>user List</h1>
+<div class='content'>
+
+<% @users.each do |user|%>
+   <div class='item'>
+   <img src=<%=user.photo%> alt='user'>
+    <h3 class='user'><%= link_to user.name , user %></h3>
+    <h5>Number of post: <%=user.post_counter%></h5>
+   </div>
+<%end%>
+
+</div>

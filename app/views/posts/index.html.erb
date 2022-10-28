@@ -1,1 +1,21 @@
-<h1>Post data will load</h1>
+<h1>Posts</h1>
+<div class='content'>
+  <section class='user-info'>
+        <img src=<%= @user.photo%>/>
+        <h3 class='user'><%= @user.name%></h3>
+        <h5>Number of post: <%= @user.post_counter || 0%></h5>
+    </section>
+
+ <% @post.each do |post|%>
+          <section class='post'>
+           <h3><%= link_to 'Post#' , user_post_path(@user.id , post.id) %><%=post.id%></h3>
+            <%# <h4>Post#<%=post.id%></h4>
+                <p>
+                <%= post.text%>
+                </p>
+                <span><b>comments:</b> <%= post.comments_counter || 0%></span>
+                <span><b>Likes:</b><%= post.likes_counter || 0%></span>
+           </section>
+    <%end%>
+    <button class='btn'>Pegination</button>
+</div>

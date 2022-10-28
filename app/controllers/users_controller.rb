@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-    def index;
-       
+    def index
+     @users=User.all()
+
     end
 
     def show
-    #display a user detail
+        @user=User.find(params[:id])
     end
 end
