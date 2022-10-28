@@ -19,5 +19,6 @@
 
  <div class='buttons'>
   <%= button_to 'Add new comment' , new_user_post_comment_path(@post.user_id , @post) , method: :get %>
+   <%= button_to 'Add Like' , new_user_post_like_path(@post.user_id , @post) , method: :get %>
  </div>
 </div>
