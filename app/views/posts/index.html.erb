@@ -17,5 +17,9 @@
                 <span><b>Likes:</b><%= post.likes_counter || 0%></span>
            </section>
     <%end%>
-    <button class='btn'>Pegination</button>
+     <%= button_to 'add new post' , new_user_post_url(id: @user.id) , method: :get%>
+    <button class='btn'>
+   
+    Pegination</button>
+
 </div>
