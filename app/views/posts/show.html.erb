@@ -1,1 +1,19 @@
-<h1>Post details will display</h1>
+
+<div class='content'>
+<section class='post-content'>
+    <div class='post-header'>
+      <h3>Post #<%= @user.id%> by <%= @user.name%></h3>
+      <p><span>Comment: <%=@post.comments_counter || 0%></span>
+      <span>Likes: <%=@post.likes_counter || 0%></span></p>
+    </div>
+    <p><%= @post.text%> </p>
+</section>
+
+ <section class='comment'>
+      <h2>Comments</h2>
+      <%@count=0%>
+     <% @post.five_most_recent_comment.each do |comment|%>
+      <p><%=@count+=1%># <b>User:</b>  <%=comment.user.name%> ,<b>Comment:</b> <%=comment.text%><p> 
+    <%end%>
+ </section>
+</div>

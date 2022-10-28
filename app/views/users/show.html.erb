@@ -1,1 +1,27 @@
-<h1>User details will display</h1>
+<h1>User Details</h1>
+<div class='content'>
+    <section class='user-info'>
+        <img src=<%= @user.photo%>/>
+        <h3 class='user'><%= @user.name%></h3>
+        <h5>Number of post: <%= @user.post_counter || 0%></h5>
+    </section>
+    <section class='bio'>
+     <h4>bio</h4>
+        <p>
+        <%= @user.bio%>
+        </p>
+    </section>
+    
+    <% @user.recent_post.each do |post|%>
+          <section class='post'>
+            <h4><%=post.title%></h4>
+                <p>
+                <%= post.text%>
+                </p>
+           </section>
+    <%end%>
+
+    <button class='btn'>
+        <%= link_to "See all post" , user_posts_path(@user)%>
+    </button>
+</div>
