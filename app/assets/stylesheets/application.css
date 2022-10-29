@@ -80,3 +80,9 @@ margin: auto;
  .comment p { 
    margin: 3% 0 0 4%;
  }
+
+ .add-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
