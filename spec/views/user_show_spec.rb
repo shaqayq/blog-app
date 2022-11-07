@@ -4,7 +4,7 @@ RSpec.describe 'Users', type: :system, js: true do
   describe 'user post index page' do
     before(:each) do
       @user = User.create(name: 'Giso', photo: 'https://randomuser.me/api/portraits/men/65.jpg',
-                          bio: 'I am student', post_counter: 5)
+                          bio: 'Teacher from Poland.', post_counter: 5)
       @post = Post.create(user_id: 1, title: 'Giso Post', text: 'This is my first post')
 
       visit user_path(1)
@@ -15,6 +15,10 @@ RSpec.describe 'Users', type: :system, js: true do
 
     it 'see the user`s username.' do
       expect(page).to have_content(@user.name)
+    end
+
+    it 'see the user`s bio.' do
+      expect(page).to have_content(@user.bio)
     end
 
     it 'see the number of posts the user has written.' do
