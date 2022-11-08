@@ -8,7 +8,8 @@
 
  <% @post.each do |post|%>
           <section class='post'>
-           <h3><%= link_to 'Post#' , user_post_path(@user.id , post.id) %><%=post.id%></h3>
+          <h2>Post#<%=post.id%></h2>
+           <h3><%= link_to post.title , user_post_path(@user.id , post.id) %></h3>
             <%# <h4>Post#<%=post.id%></h4>
                 <p>
                 <%= post.text%>
