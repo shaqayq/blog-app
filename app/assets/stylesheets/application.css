@@ -86,3 +86,25 @@ margin: auto;
   flex-direction: column;
   align-items: center;
  }
+
+ .form-content{
+  margin: auto;
+  width: 17%;
+  border: 1px solid;
+  padding: 59px;
+  border-radius: 47px;
+ }
+
+ .actions input , .log-in{
+  background: #88a4e3;
+  border: aliceblue;
+  padding: 8px;
+  border-radius: 9px;
+  margin: 10px 0 0 18px;
+ }
+
+ form input {
+  padding: 5px;
+ }
+
+
