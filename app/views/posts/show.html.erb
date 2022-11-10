@@ -14,7 +14,16 @@
       <h2>Comments</h2>
       <%@count=0%>
      <% @post.five_most_recent_comment.each do |comment|%>
-      <p><%=@count+=1%># <b>User:</b>  <%=comment.user.name%> ,<b>Comment:</b> <%=comment.text%><p> 
+      <div>
+
+    <p><%=@count+=1%># <b>User:</b>  <%=comment.user.name%> ,<b>Comment:</b> <%=comment.text%>
+      <% if can? :destroy , comment%>
+                
+                <%= button_to 'Delete Comment' , user_post_comment_path(comment.user_id , comment.post_id , comment.id) , method: 'delete' %>
+               
+      <%end%>
+  </p> 
+      </div>
     <%end%>
  </section>
 

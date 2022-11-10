@@ -16,6 +16,11 @@
                 </p>
                 <span><b>comments:</b> <%= post.comments_counter || 0%></span>
                 <span><b>Likes:</b><%= post.likes_counter || 0%></span>
+                <% if can? :destroy , post%>
+                <button class='delete-btn'>
+                <%= button_to 'Delete' , user_post_path(post.user_id , post.id) , method: :delete %>
+                </button>
+                <%end%>
            </section>
     <%end%>
      <%= button_to 'add new post' , new_user_post_url(id: @user.id) , method: :get%>
