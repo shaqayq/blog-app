@@ -16,4 +16,9 @@ class Post < ApplicationRecord
     def five_most_recent_comment
        comments.order(created_at: :asc).limit(5)
     end
+
+    def update_user_posts_counter
+        user = User.find(user_id)
+        user.update(post_counter: user.posts.count)
+    end
 end

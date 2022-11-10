@@ -36,4 +36,13 @@ class PostsController < ApplicationController
     def post_params
         params.require(:post).permit(:title , :text , :comments_counter , :likes_counter)
     end
+
+
+    def destroy
+        @post = Post.find_by_id(params[:id])
+        @post.destroy
+        @post.update_user_posts_comment_counter
+        redirect_to user_posts_path
+        
+    end
 end
