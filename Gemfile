@@ -73,6 +73,9 @@ group :development, :test do
 
   gem 'selenium-webdriver'
   gem 'webdrivers'
+
+  gem 'rswag-api'
+  gem 'rswag-ui'
 end
 
 group :development do
@@ -80,6 +83,8 @@ group :development do
   gem 'web-console'
 
   gem 'rspec-mocks', '~> 3.11.2'
+
+  gem 'rswag-specs'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -93,6 +98,9 @@ group :test do
   # gem 'capybara'
   # gem 'selenium-webdriver'
   # gem 'webdrivers'
+
+  # gem 'rspec-rails'
+  # gem 'rswag-specs'
 end
 
 gem 'rspec-support'
